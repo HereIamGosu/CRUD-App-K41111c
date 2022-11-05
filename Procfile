@@ -1,2 +1,2 @@
-web: gunicorn wsgi:application
+web: gunicorn manage:main
 release: python manage.py migrate
