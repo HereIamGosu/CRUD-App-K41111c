@@ -41,6 +41,9 @@
       function myFunction() {
         alert("Страница загружена!");
       }
+      function urlopen() {
+        window.open("http://127.0.0.1:8000");
+      }
     </script>
   </head>
   <body hx-boost="true" onload="myFunction()">
@@ -50,12 +53,6 @@
 
         {% with url_name=request.resolver_match.url_name %}
         <ul class="nav navbar-nav pull-xs-right">
-          <li class="nav-item">
-            <a class="nav-link" onclick="alert_func()">Он-клик ивент</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" onclick="realworld()">Он-клик два</a>
-          </li>
           <li class="nav-item">
             <a
               class="nav-link{% if url_name == 'home' %} active{% endif %}"
@@ -69,6 +66,16 @@
             <a class="nav-link" href="{% url 'create_article' %}">
               <i class="ion-compose"></i>&nbsp;Создать
             </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="cursor: pointer" onclick="alert_func()">
+              Он-клик
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="cursor: pointer" onclick="urlopen()"
+              ><i class="ion-chatboxes"></i>&nbsp;Чат-приложение</a
+            >
           </li>
           {% if user.is_authenticated %}
           <li class="nav-item{% if url_name == 'settings' %} active{% endif %}">
