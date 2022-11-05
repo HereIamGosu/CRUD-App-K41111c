@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "realworld.accounts",
     "realworld.articles",
     "realworld.comments",
+    "gunicorn",
 ]
 
 MIDDLEWARE = [
