@@ -10,14 +10,13 @@
 
     {% csrf_token %}
     <fieldset class="form-group">
-        {% render_field form.title class+="form-control form-control-lg" placeholder="Article Title" %}
+        {% render_field form.title class+="form-control form-control-lg" placeholder="Заголовок статьи" %}
     </fieldset>
     <fieldset class="form-group">
-        {# see https://github.com/jazzband/django-widget-tweaks/issues/85 #}
-        {{ form.summary|attr:"placeholder:What's this article about?"|add_class:"form-control" }}
+        {{ form.summary|attr:"placeholder:О чём эта статья?"|add_class:"form-control" }}
     </fieldset>
     <fieldset class="form-group">
-        {% render_field form.content class+="form-control" placeholder="Write your article (in markdown)" rows=8 %}
+        {% render_field form.content class+="form-control" placeholder="Напишите содержание статьи" rows=8 %}
     </fieldset>
     <fieldset class="form-group" x-data="{# fmt:off #}{
               insertTag(tag) {
@@ -29,12 +28,12 @@
                   }
               }"{# fmt:on #}>
         {% url 'tags_autocomplete' as tags_autocomplete_url %}
-        {% render_field form.tags class+="form-control" placeholder="Enter tags" x-ref="input" hx-trigger="keyup changed delay:200ms" hx-target="#tags-list" hx-swap="innerHTML" hx-get=tags_autocomplete_url autocomplete="off" %}
+        {% render_field form.tags class+="form-control" placeholder="Введите теги" x-ref="input" hx-trigger="keyup changed delay:200ms" hx-target="#tags-list" hx-swap="innerHTML" hx-get=tags_autocomplete_url autocomplete="off" %}
         <div class="tag-list" id="tags-list" x-ref="list"></div>
     </fieldset>
     <fieldset>
         <button class="btn btn-lg pull-xs-right btn-primary" type="submit">
-            {{ article|yesno:"Save,Publish" }} Article
+            {{ article|yesno:"Сохранить,Опубликовать" }} статью
         </button>
     </fieldset>
 </form>

@@ -12,22 +12,22 @@
     {% csrf_token %}
     <fieldset>
         <fieldset class="form-group">
-            {% render_field form.image class+="form-control form-control-lg" placeholder="URL of profile picture" %}
+            {% render_field form.image class+="form-control form-control-lg" placeholder="URL-адрес изображения профиля" %}
         </fieldset>
         <fieldset class="form-group">
-            {% render_field form.name class+="form-control form-control-lg" placeholder="Your Name" %}
+            {% render_field form.name class+="form-control form-control-lg" placeholder="Ваше имя" %}
         </fieldset>
         <fieldset class="form-group">
-            {% render_field form.bio class+="form-control form-control-lg" placeholder="Short bio about you" rows=8 %}
+            {% render_field form.bio class+="form-control form-control-lg" placeholder="Краткая биография о вас" rows=8 %}
         </fieldset>
         <fieldset class="form-group">
-            {% render_field form.email class+="form-control form-control-lg" placeholder="Email" %}
+            {% render_field form.email class+="form-control form-control-lg" placeholder="Электронная почта" %}
         </fieldset>
         <fieldset class="form-group">
-            {% render_field form.password class+="form-control form-control-lg" placeholder="Password" %}
+            {% render_field form.password class+="form-control form-control-lg" placeholder="Пароль" %}
         </fieldset>
         <button class="btn btn-lg btn-primary pull-xs-right">
-            Update Settings
+            Обновить настройки
         </button>
     </fieldset>
 </form>

@@ -18,6 +18,13 @@
                     {% include "accounts/_follow_btn.html" with button_id="follow-top" followed=article.author %}
                     &nbsp;&nbsp;
                     {% include "articles/_favorite_btn.html" with button_id="favorite-top" %}
+                    &nbsp;&nbsp;
+                    {% include "articles/_del_article_btn.html" with button_id="favorite-top" %}
+                    &nbsp;&nbsp;
+                    <!-- <i class="ion-trash-a"
+                            hx-delete="{% url 'delete_article' article.id %}"
+                            hx-swap="outerHTML"
+                            hx-confirm="Удалить статью?"></i> -->
                 </div>
 
             </div>

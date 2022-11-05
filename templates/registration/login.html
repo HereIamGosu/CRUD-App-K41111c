@@ -6,9 +6,9 @@
             <div class="row">
 
                 <div class="col-md-6 offset-md-3 col-xs-12">
-                    <h1 class="text-xs-center">Sign up</h1>
+                    <h1 class="text-xs-center">Регистрация</h1>
                     <p class="text-xs-center">
-                        <a href="{% url 'register' %}">Have an account?</a>
+                        <a href="{% url 'register' %}">Уже есть аккаунт?</a>
                     </p>
 
                     {% if form.errors %}
@@ -23,14 +23,14 @@
                         {% csrf_token %}
                         {% with WIDGET_CLASS="form-control form-control-lg" %}
                             <fieldset class="form-group">
-                                {% render_field form.username placeholder="Email" class+=WIDGET_CLASS %}
+                                {% render_field form.username placeholder="Электронная почта" class+=WIDGET_CLASS %}
                             </fieldset>
                             <fieldset class="form-group">
-                                {% render_field form.password placeholder="Password" class+=WIDGET_CLASS %}
+                                {% render_field form.password placeholder="Пароль" class+=WIDGET_CLASS %}
                             </fieldset>
                         {% endwith %}
                         <button class="btn btn-lg btn-primary pull-xs-right">
-                            Sign in
+                            Вход
                         </button>
                     </form>
                 </div>
